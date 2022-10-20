@@ -1,5 +1,10 @@
-const Home = () => {
-  return <div>Home Page</div>
+import ChampionList from '../components/ChampionList'
+const Home = ({ list }) => {
+  return (
+    <div>
+      <ChampionList list={list} />
+    </div>
+  )
 }
 
 export default Home

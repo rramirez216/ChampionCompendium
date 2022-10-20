@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Home from './pages/Home'
+import Champion from './pages/Champion'
 import GlobalStyles from './components/GlobalStyles'
 import useFetch from './hooks/useFetch'
 function App() {
@@ -9,8 +11,11 @@ function App() {
   if (result) console.log(result)
   return (
     <div>
-      <div>Choose your champion</div>
-      <div>champions listed here</div>
+      <Routes>
+        <Route path='/champions' element={<Home list={result} />} />
+        <Route path='/' element={<Navigate to='/champions' />} />
+        <Route path='/champions/Aatrox' element={<Champion />} />
+      </Routes>
       <GlobalStyles />
     </div>
   )
