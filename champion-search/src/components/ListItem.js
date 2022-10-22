@@ -17,7 +17,7 @@ const ListItem = ({ name, id }) => {
 
 const Card = styled.div`
   max-width: 250px;
-  height: 350px;
+  max-height: 350px;
   overflow: hidden;
   position: relative;
 `
