@@ -1,10 +1,18 @@
 import ChampionList from '../components/ChampionList'
+import styled from 'styled-components'
+
 const Home = ({ list }) => {
   return (
-    <div>
+    <Wrapper>
       <ChampionList list={list} />
-    </div>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.main`
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+`
 
 export default Home
