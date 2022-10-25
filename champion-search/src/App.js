@@ -10,14 +10,14 @@ function App() {
   )
   if (result) console.log(result)
   return (
-    <div>
+    <>
       <Routes>
         <Route path='/champions' element={<Home list={result} />} />
         <Route path='/' element={<Navigate to='/champions' />} />
         <Route path='/champions/Aatrox' element={<Champion />} />
       </Routes>
       <GlobalStyles />
-    </div>
+    </>
   )
 }
 
