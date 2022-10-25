@@ -1,9 +1,11 @@
-import ChampionList from '../components/ChampionList'
 import styled from 'styled-components'
+import ChampionList from '../components/ChampionList'
+import FilterBar from '../components/FilterBar/FilterBar'
 
 const Home = ({ list }) => {
   return (
     <Wrapper>
+      <FilterBar />
       <ChampionList list={list} />
     </Wrapper>
   )
