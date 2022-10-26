@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
+
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -60,6 +61,7 @@ const GlobalStyles = createGlobalStyle`
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Oxygen', sans-serif;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
