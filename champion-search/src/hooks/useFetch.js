@@ -7,7 +7,7 @@ const useFetch = (url) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(url)
-        setData(Object.values(response.data.data))
+        setData(response.data.data)
       } catch (err) {
         console.error(err)
       }
@@ -17,12 +17,3 @@ const useFetch = (url) => {
   return data
 }
 export default useFetch
-
-// async function getUser() {
-//   try {
-//     const response = await axios.get('/user?ID=12345');
-//     console.log(response);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
