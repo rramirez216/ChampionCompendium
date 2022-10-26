@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 import Search from './Search'
 
-const FilterBar = () => {
+const FilterBar = ({ setSearch }) => {
   return (
     <Bar>
-      <Search />
+      <Search setSearch={setSearch} />
       filter bar here
     </Bar>
   )
 }
 
 const Bar = styled.div`
-  width: 100%;
+  width: 1440px;
   display: flex;
   flex-flow: row nowrap;
   border: solid 2px salmon;
