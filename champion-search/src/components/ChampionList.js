@@ -1,16 +1,11 @@
 import styled from 'styled-components'
 import ListItem from './ListItem'
-import getValuesFromResponse from '../utils/getValuesFromResponse'
 
-const ChampionList = ({ result }) => {
-  let list
-  if (result) {
-    list = getValuesFromResponse(result)
-  }
+const ChampionList = ({ championArray }) => {
   return (
     <Section>
-      {list ? (
-        list.map((value) => (
+      {championArray ? (
+        championArray.map((value) => (
           <ListItem name={value.name} id={value.id} key={value.id} />
         ))
       ) : (
