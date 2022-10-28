@@ -2,12 +2,16 @@ import styled from 'styled-components'
 import ChampionList from '../components/ChampionList'
 import FilterBar from '../components/FilterBar/FilterBar'
 
-const Home = ({ result, search, setSearch }) => {
+const Home = ({ championArray, search, setSearch }) => {
   return (
     <Wrapper>
-      <FilterBar search={search} setSearch={setSearch} />
+      <FilterBar
+        search={search}
+        setSearch={setSearch}
+        championArray={championArray}
+      />
       {search}
-      <ChampionList result={result} />
+      <ChampionList championArray={championArray} />
     </Wrapper>
   )
 }
