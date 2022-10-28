@@ -1,11 +1,15 @@
 import styled from 'styled-components'
 import Search from './Search'
+import DropDown from './DropDown'
 
-const FilterBar = ({ setSearch }) => {
+const FilterBar = ({ setSearch, championArray }) => {
   return (
     <Bar>
-      <Search setSearch={setSearch} />
+      <DropDown championArray={championArray}>
+        <Search setSearch={setSearch} />
+      </DropDown>
       filter bar here
+      {/* <DropDown>Difficulty</DropDown> */}
     </Bar>
   )
 }
