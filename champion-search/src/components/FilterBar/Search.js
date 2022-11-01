@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import { Search as Csearch } from 'lucide-react'
 
-const Search = ({ search, setSearch }) => {
+const Search = ({ search, setSearch, handleSearch }) => {
   return (
     <Label>
       <Csearch />
       <Input
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => handleSearch(e.target.value)}
         type='text'
         name='csearch'
         placeholder='SEARCH'

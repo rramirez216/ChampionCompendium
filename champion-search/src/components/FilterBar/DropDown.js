@@ -3,7 +3,6 @@ import useToggle from '../../hooks/useToggle'
 
 const DropDown = ({ children, championArray }) => {
   const [value, toggleValue] = useToggle(false)
-  console.log(value)
   return (
     <Wrapper onClick={toggleValue}>
       {children}

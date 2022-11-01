@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import ListItem from './ListItem'
 
 const ChampionList = ({ championArray }) => {
+  console.log(championArray)
   return (
     <Section>
       {championArray ? (
