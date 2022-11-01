@@ -2,15 +2,22 @@ import styled from 'styled-components'
 import ChampionList from '../components/ChampionList'
 import FilterBar from '../components/FilterBar/FilterBar'
 
-const Home = ({ championArray, search, setSearch }) => {
+const Home = ({ championArray, setSearch, handleSearch, search }) => {
+  let answer
+  if (search) {
+    answer = championArray.filter((value) =>
+      value.name.toLowerCase().includes(search)
+    )
+  } else {
+    answer = championArray
+  }
   return (
     <Wrapper>
       <FilterBar
-        search={search}
         setSearch={setSearch}
-        championArray={championArray}
+        championArray={answer}
+        handleSearch={handleSearch}
       />
-      {search}
       <ChampionList championArray={championArray} />
     </Wrapper>
   )
