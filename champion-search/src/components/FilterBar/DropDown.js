@@ -1,14 +1,24 @@
 import styled from 'styled-components'
 import useToggle from '../../hooks/useToggle'
 
-const DropDown = ({ children, championArray }) => {
+const DropDown = ({ children, championArray, setSelected, setSearch }) => {
   const [value, toggleValue] = useToggle(false)
   return (
     <Wrapper onClick={toggleValue}>
       {children}
       <Ul visibility={value ? 'block' : 'none'}>
         {championArray ? (
-          championArray.map((value) => <Li key={value.id}>{value.name}</Li>)
+          championArray.map((value) => (
+            <Li
+              onClick={() => {
+                setSelected(value.name)
+                setSearch(value.name)
+              }}
+              key={value.id}
+            >
+              {value.name}
+            </Li>
+          ))
         ) : (
           <Li>loading...</Li>
         )}
@@ -23,7 +33,7 @@ const Wrapper = styled.div`
 const Ul = styled.ul`
   width: 100%;
   max-height: 300px;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   text-align: left;
   position: absolute;
   top: 100%;
@@ -31,6 +41,11 @@ const Ul = styled.ul`
   overflow-y: scroll;
   display: ${(props) => props.visibility};
 `
-const Li = styled.li``
+const Li = styled.li`
+  &:hover {
+    background-color: hsl(0, 0%, 95%);
+    cursor: pointer;
+  }
+`
 
 export default DropDown
