@@ -8,7 +8,7 @@ import GlobalStyles from './components/GlobalStyles'
 
 function App() {
   const [search, setSearch] = useState('')
-  const [filtered, setFiltered] = useState(null)
+  const [selected, setSelected] = useState('')
 
   let championListResponse = useFetch(
     'http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/champion.json'
@@ -32,9 +32,11 @@ function App() {
           element={
             <Home
               championArray={championArray}
-              setSearch={setSearch}
               handleSearch={handleSearch}
               search={search}
+              selected={selected}
+              setSelected={setSelected}
+              setSearch={setSearch}
             />
           }
         />
