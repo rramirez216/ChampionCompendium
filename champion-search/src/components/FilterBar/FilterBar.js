@@ -23,7 +23,7 @@ const FilterBar = ({
           setSearch={setSearch}
         />
       </DropDown>
-      filter bar here
+
       {/* <DropDown>Difficulty</DropDown> */}
     </Bar>
   )
