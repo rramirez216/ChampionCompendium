@@ -1,22 +1,22 @@
 import styled from 'styled-components'
 import useToggle from '../../hooks/useToggle'
 
-const DropDown = ({ children, championArray, setSelected, setSearch }) => {
+const DropDown = ({ children, list, setSelected, setSearch }) => {
   const [value, toggleValue] = useToggle(false)
   return (
     <Wrapper onClick={toggleValue}>
       {children}
       <Ul visibility={value ? 'block' : 'none'}>
-        {championArray ? (
-          championArray.map((value) => (
+        {list ? (
+          list.map((champion) => (
             <Li
               onClick={() => {
-                setSelected(value.name)
-                setSearch(value.name)
+                setSelected(champion.name)
+                setSearch(champion.name)
               }}
-              key={value.id}
+              key={champion.id}
             >
-              {value.name}
+              {champion.name}
             </Li>
           ))
         ) : (
