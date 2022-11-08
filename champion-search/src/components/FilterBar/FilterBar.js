@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import Search from './Search'
 import DropDown from './DropDown'
+import Tags from './Tags'
+import constants from '../../data/constants'
 
 const FilterBar = ({
   search,
@@ -8,11 +10,12 @@ const FilterBar = ({
   handleSearch,
   setSelected,
   setSearch,
+  setTag,
 }) => {
   return (
     <Bar>
       <DropDown
-        championArray={championArray}
+        list={championArray}
         setSelected={setSelected}
         setSearch={setSearch}
       >
@@ -23,8 +26,8 @@ const FilterBar = ({
           setSearch={setSearch}
         />
       </DropDown>
-
-      {/* <DropDown>Difficulty</DropDown> */}
+      <Tags setTag={setTag} />
+      <DropDown championArray={constants.difficulty}>All difficulties</DropDown>
     </Bar>
   )
 }
@@ -34,6 +37,7 @@ const Bar = styled.div`
   display: flex;
   flex-flow: row nowrap;
   border: solid 2px salmon;
+  padding: 16px 8px;
 `
 
 export default FilterBar
