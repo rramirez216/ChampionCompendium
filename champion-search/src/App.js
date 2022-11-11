@@ -9,6 +9,8 @@ import GlobalStyles from './components/GlobalStyles'
 function App() {
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState('')
+  const [tag, setTag] = useState('All')
+  const [difficulty, setDifficulty] = useState('All Difficulties')
 
   let championListResponse = useFetch(
     'http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/champion.json'
@@ -37,6 +39,10 @@ function App() {
               selected={selected}
               setSelected={setSelected}
               setSearch={setSearch}
+              tag={tag}
+              setTag={setTag}
+              difficulty={difficulty}
+              setDifficulty={setDifficulty}
             />
           }
         />
