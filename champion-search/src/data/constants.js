@@ -29,7 +29,20 @@ const constants = {
       singular: 'Tank',
     },
   ],
-  difficulty: ['Low', 'Moderate', 'High'],
+  difficulty: [
+    {
+      id: 0,
+      name: 'Low',
+    },
+    {
+      id: 1,
+      name: 'Moderate',
+    },
+    {
+      id: 2,
+      name: 'High',
+    },
+  ],
 }
 
 export default constants
