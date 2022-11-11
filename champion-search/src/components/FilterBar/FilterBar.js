@@ -11,6 +11,8 @@ const FilterBar = ({
   setSelected,
   setSearch,
   setTag,
+  difficulty,
+  setDifficulty,
 }) => {
   return (
     <Bar>
@@ -27,7 +29,9 @@ const FilterBar = ({
         />
       </DropDown>
       <Tags setTag={setTag} />
-      <DropDown championArray={constants.difficulty}>All difficulties</DropDown>
+      <DropDown list={constants.difficulty} setDifficulty={setDifficulty}>
+        {difficulty}
+      </DropDown>
     </Bar>
   )
 }

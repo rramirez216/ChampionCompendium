@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Search as Csearch, XCircle } from 'lucide-react'
+import { Search as Csearch } from 'lucide-react'
+import X from './X'
 
 const Search = ({ search, handleSearch, setSelected, setSearch }) => {
   return (
@@ -12,12 +13,11 @@ const Search = ({ search, handleSearch, setSelected, setSearch }) => {
         name='csearch'
         placeholder='SEARCH'
       />
-      <Circle
-        display={search.length > 0 ? 'block' : 'none'}
-        onClick={() => {
-          setSelected('')
-          setSearch('')
-        }}
+      <X
+        displayBoolean={search.length > 0}
+        setSelected={setSelected}
+        setSearch={setSearch}
+        location={'search'}
       />
     </Label>
   )
@@ -28,10 +28,6 @@ const Label = styled.label`
 `
 const Input = styled.input`
   border-style: none;
-`
-const Circle = styled(XCircle)`
-  cursor: pointer;
-  display: ${(props) => props.display};
 `
 
 export default Search

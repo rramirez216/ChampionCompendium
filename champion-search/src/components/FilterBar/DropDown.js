@@ -1,40 +1,62 @@
 import styled from 'styled-components'
 import useToggle from '../../hooks/useToggle'
+import X from './X'
 
-const DropDown = ({ children, list, setSelected, setSearch }) => {
+const DropDown = ({
+  children,
+  list,
+  setSelected,
+  setSearch,
+  difficulty,
+  setDifficulty,
+}) => {
   const [value, toggleValue] = useToggle(false)
   return (
     <Wrapper onClick={toggleValue}>
       {children}
       <Ul visibility={value ? 'block' : 'none'}>
         {list ? (
-          list.map((champion) => (
-            <Li
-              onClick={() => {
-                setSelected(champion.name)
-                setSearch(champion.name)
-              }}
-              key={champion.id}
-            >
-              {champion.name}
-            </Li>
-          ))
+          list.length > 3 ? (
+            list.map((item) => (
+              <Li
+                onClick={() => {
+                  setSelected(item.name)
+                  setSearch(item.name)
+                }}
+                key={item.id}
+              >
+                {item.name}
+              </Li>
+            ))
+          ) : (
+            list.map((item, index) => (
+              <Li
+                onClick={() => {
+                  setDifficulty(item.name)
+                }}
+                key={index}
+              >
+                {item.name}
+              </Li>
+            ))
+          )
         ) : (
           <Li>loading...</Li>
         )}
       </Ul>
+      <X displayBoolean={true} />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
   position: relative;
+  width: 200px;
 `
 const Ul = styled.ul`
   width: 100%;
   max-height: 300px;
   background-color: hsl(0, 0%, 100%);
-  text-align: left;
   position: absolute;
   top: 100%;
   z-index: 2;

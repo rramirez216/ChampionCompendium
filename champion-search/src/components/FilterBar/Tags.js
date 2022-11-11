@@ -1,14 +1,25 @@
-import styled from 'styled-components '
+import styled from 'styled-components'
 import constants from '../../data/constants'
 
-const Tags = () => {
+const Tags = ({ setTag }) => {
   return (
-    <div>
+    <Wrapper>
       {constants.tags.map((value) => (
-        <div>{value}</div>
+        <Button onClick={() => setTag(value.singular)}>{value.plural}</Button>
       ))}
-    </div>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+`
+const Button = styled.button`
+  color: hsl(0, 0%, 55%);
+  background-color: hsl(0, 0%, 100%);
+  border-style: none;
+  cursor: pointer;
+`
 
 export default Tags
