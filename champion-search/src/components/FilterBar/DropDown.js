@@ -44,7 +44,6 @@ const DropDown = ({
           <Li>loading...</Li>
         )}
       </Ul>
-      <X displayBoolean={true} />
     </Wrapper>
   )
 }
