@@ -3,6 +3,7 @@ import Search from './Search'
 import DropDown from './DropDown'
 import Tags from './Tags'
 import constants from '../../data/constants'
+import Difficulty from './Difficulty'
 
 const FilterBar = ({
   search,
@@ -30,7 +31,7 @@ const FilterBar = ({
       </DropDown>
       <Tags setTag={setTag} />
       <DropDown list={constants.difficulty} setDifficulty={setDifficulty}>
-        {difficulty}
+        <Difficulty difficulty={difficulty} setDifficulty={setDifficulty} />
       </DropDown>
     </Bar>
   )
