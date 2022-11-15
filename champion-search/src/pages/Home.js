@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import ChampionList from '../components/ChampionList'
 import FilterBar from '../components/FilterBar/FilterBar'
+import filterByDifficulty from '../utils/filterByDifficulty'
 
 const Home = ({
   championArray,
@@ -23,15 +24,15 @@ const Home = ({
       ))
     : (filteredInput = championArray)
   // this will filter the list of champions whether a champ was selected in the search bar or a tag was selected
-  selected
-    ? (selectedChampion = championArray.filter(
-        (value) => value.name === selected
-      ))
-    : tag !== 'All'
-    ? (selectedChampion = championArray.filter((value) =>
-        value.tags.includes(tag)
-      ))
-    : (selectedChampion = championArray)
+  if (selected) {
+    selectedChampion = championArray.filter((value) => value.name === selected)
+  } else if (tag !== 'All') {
+    selectedChampion = championArray.filter((value) => value.tags.includes(tag))
+  } else {
+    selectedChampion = championArray
+  }
+  // function that filters by difficulty
+  selectedChampion = filterByDifficulty(selectedChampion, difficulty)
 
   return (
     <Wrapper>
@@ -45,7 +46,6 @@ const Home = ({
         difficulty={difficulty}
         setDifficulty={setDifficulty}
       />
-      {difficulty}
       <ChampionList championArray={selectedChampion} />
     </Wrapper>
   )
