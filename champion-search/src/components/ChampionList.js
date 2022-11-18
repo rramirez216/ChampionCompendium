@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 import ListItem from './ListItem'
 
-const ChampionList = ({ championArray }) => {
+const ChampionList = ({ championArray, setCurrentChampion }) => {
   return (
     <Section>
       {championArray ? (
         championArray.map((value) => (
-          <ListItem name={value.name} id={value.id} key={value.id} />
+          <ListItem
+            name={value.name}
+            id={value.id}
+            key={value.id}
+            setCurrentChampion={setCurrentChampion}
+          />
         ))
       ) : (
         <div>loading...</div>
