@@ -14,6 +14,7 @@ const Home = ({
   setTag,
   difficulty,
   setDifficulty,
+  setCurrentChampion,
 }) => {
   let filteredInput
   let selectedChampion
@@ -46,7 +47,10 @@ const Home = ({
         difficulty={difficulty}
         setDifficulty={setDifficulty}
       />
-      <ChampionList championArray={selectedChampion} />
+      <ChampionList
+        championArray={selectedChampion}
+        setCurrentChampion={setCurrentChampion}
+      />
     </Wrapper>
   )
 }
