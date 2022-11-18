@@ -1,8 +1,12 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-const ListItem = ({ name, id }) => {
+const ListItem = ({ name, id, setCurrentChampion }) => {
   return (
-    <Card>
+    <Card
+      to={`/champions/${id.toLowerCase()}`}
+      onClick={() => setCurrentChampion(id)}
+    >
       <img
         src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${id}_0.jpg`}
         alt={name}
@@ -15,7 +19,8 @@ const ListItem = ({ name, id }) => {
   )
 }
 
-const Card = styled.div`
+const Card = styled(Link)`
+  display: block;
   max-width: 250px;
   max-height: 350px;
   overflow: hidden;
