@@ -11,6 +11,7 @@ function App() {
   const [selected, setSelected] = useState('')
   const [tag, setTag] = useState('All')
   const [difficulty, setDifficulty] = useState('All Difficulties')
+  const [currentChampion, setCurrentChampion] = useState(null)
 
   let championListResponse = useFetch(
     'http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/champion.json'
@@ -43,11 +44,15 @@ function App() {
               setTag={setTag}
               difficulty={difficulty}
               setDifficulty={setDifficulty}
+              setCurrentChampion={setCurrentChampion}
             />
           }
         />
         <Route path='/' element={<Navigate to='/champions' />} />
-        <Route path='/champions/Aatrox' element={<Champion />} />
+        <Route
+          path={`/champions/${currentChampion}`}
+          element={<Champion currentChampion={currentChampion} />}
+        />
       </Routes>
       <GlobalStyles />
     </>
