@@ -1,5 +1,5 @@
-const Champion = () => {
-  return <div>Champion Name here</div>
+const Champion = ({ currentChampion }) => {
+  return <div>{currentChampion ? currentChampion : 'empty'}</div>
 }
 
 export default Champion
