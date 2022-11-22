@@ -4,8 +4,10 @@ import constants from '../../data/constants'
 const Tags = ({ setTag }) => {
   return (
     <Wrapper>
-      {constants.tags.map((value) => (
-        <Button onClick={() => setTag(value.singular)}>{value.plural}</Button>
+      {constants.tags.map((value, index) => (
+        <Button onClick={() => setTag(value.singular)} key={index}>
+          {value.plural}
+        </Button>
       ))}
     </Wrapper>
   )
