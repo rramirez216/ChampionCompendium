@@ -11,7 +11,7 @@ function App() {
   const [selected, setSelected] = useState('')
   const [tag, setTag] = useState('All')
   const [difficulty, setDifficulty] = useState('All Difficulties')
-  const [currentChampion, setCurrentChampion] = useState(null)
+  const [currentChampion, setCurrentChampion] = useState('Udyr')
 
   let championListResponse = useFetch(
     'http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/champion.json'
@@ -21,10 +21,14 @@ function App() {
     championArray = getValuesFromResponse(championListResponse)
   }
 
-  // const championData = useFetch(
-  //   'http://ddragon.leagueoflegends.com/cdn/12.20.1/data/en_US/champion/Aatrox.json'
-  // )
-
+  const championData = useFetch(
+    `http://ddragon.leagueoflegends.com/cdn/12.20.1/data/en_US/champion/${currentChampion}.json`
+  )
+  let championDataResponse
+  if (championData) {
+    championDataResponse = championData[currentChampion]
+    console.log(championDataResponse)
+  }
   const handleSearch = (e) => setSearch(e)
 
   return (
@@ -51,7 +55,12 @@ function App() {
         <Route path='/' element={<Navigate to='/champions' />} />
         <Route
           path={`/champions/${currentChampion}`}
-          element={<Champion currentChampion={currentChampion} />}
+          element={
+            <Champion
+              currentChampion={currentChampion}
+              championData={championDataResponse}
+            />
+          }
         />
       </Routes>
       <GlobalStyles />
