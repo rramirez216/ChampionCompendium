@@ -37,23 +37,21 @@ const ChampionInfo = ({ championData: { name, lore, title, id } }) => {
 }
 
 const Wrapper = styled.section`
-  max-width: 900px;
+  max-width: 1100px;
 `
 const ImageWrapper = styled.div``
 const DefaultImage = styled.img``
 const Info = styled.div`
+  /* height: min-content; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
   position: relative;
-  border: 2px solid red;
-  padding: 8% 4%;
+  /* border: 2px solid red; */
 `
 const Heading = styled.h1`
   position: absolute;
   top: 0;
-  right: 40%;
-  text-align: center;
 `
 const Span = styled.span``
 const Strong = styled.strong``
@@ -62,16 +60,17 @@ const Section = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 80px 64px;
 `
 const RoleWrapper = styled.div``
 const DifficultyWrapper = styled.div``
 const InfoDivider = styled.div`
   height: auto;
   border: 1px solid red;
-  margin-right: 32px;
 `
 const LoreWrapper = styled.div`
   flex: 1 1 0;
+  padding: 80px 64px;
 `
 
 export default ChampionInfo
