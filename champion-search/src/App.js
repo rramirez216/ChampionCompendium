@@ -27,7 +27,6 @@ function App() {
   let championDataResponse
   if (championData) {
     championDataResponse = championData[currentChampion]
-    console.log(championDataResponse)
   }
   const handleSearch = (e) => setSearch(e)
 
