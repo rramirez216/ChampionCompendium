@@ -1,14 +1,15 @@
 import styled from 'styled-components'
 import ChampionInfo from '../components/Champion/ChampionInfo/ChampionInfo'
+import Hero from '../components/Champion/hero/Hero'
 
 const Champion = ({ championData }) => {
-  // let { currentChampion: champion } = championData
   return (
     <Wrapper>
+      {championData ? <Hero championData={championData} /> : 'no champion Data'}
       {championData ? (
         <ChampionInfo championData={championData} />
       ) : (
-        'Champion Data not found'
+        'no champion Info'
       )}
     </Wrapper>
   )
@@ -17,8 +18,10 @@ const Champion = ({ championData }) => {
 const Wrapper = styled.main`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow-y: scroll; */
 `
 
 export default Champion
