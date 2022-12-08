@@ -14,6 +14,9 @@ const DropDown = ({
   return (
     <Wrapper onClick={toggleValue}>
       {children}
+
+      {/* Onclick event not working on list item when drop down is less than 4 */}
+
       <Ul visibility={value ? 'block' : 'none'}>
         {list ? (
           list.length > 3 ? (
