@@ -47,6 +47,7 @@ const Home = ({
         difficulty={difficulty}
         setDifficulty={setDifficulty}
       />
+      {selected}
       <ChampionList
         championArray={selectedChampion}
         setCurrentChampion={setCurrentChampion}
