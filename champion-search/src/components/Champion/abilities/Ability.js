@@ -1,8 +1,15 @@
 import styled from 'styled-components'
 
-const Ability = ({ id, name, description, full }) => {
-  const getCorrectUrl = (spellID, spellName) => {
-    if (spellID === 99) {
+const Ability = ({
+  index,
+  abilityKey,
+  abilityName,
+  abilityDescription,
+  full,
+  setValue,
+}) => {
+  const getCorrectUrl = (index, spellName) => {
+    if (index === 0) {
       return `http://ddragon.leagueoflegends.com/cdn/12.23.1/img/passive/${spellName}`
     } else {
       return `http://ddragon.leagueoflegends.com/cdn/12.22.1/img/spell/${spellName}`
@@ -10,8 +17,17 @@ const Ability = ({ id, name, description, full }) => {
   }
 
   return (
-    <div>
-      <img src={getCorrectUrl(id, full)} alt={name} />
+    <div
+      onClick={() =>
+        setValue({
+          id: abilityKey,
+          name: abilityName,
+          description: abilityDescription,
+        })
+      }
+    >
+      {index}
+      <img src={getCorrectUrl(index, full)} alt={abilityName} />
     </div>
   )
 }
