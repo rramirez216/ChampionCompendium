@@ -2,9 +2,7 @@ import styled from 'styled-components'
 
 const Hero = ({ championData: { name, id, title } }) => {
   return (
-    <Wrapper
-      url={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`}
-    >
+    <Wrapper>
       <Heading>
         <Span>{title}</Span>
         <br />
@@ -15,13 +13,8 @@ const Hero = ({ championData: { name, id, title } }) => {
 }
 
 const Wrapper = styled.section`
-  /* width: 100%;
-  height: 100%; */
   flex: 100% 1 0;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(${(props) => props.url}) no-repeat center;
-  background-size: cover;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
