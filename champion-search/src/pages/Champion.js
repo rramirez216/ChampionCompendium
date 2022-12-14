@@ -4,16 +4,15 @@ import Hero from '../components/Champion/hero/Hero'
 import Abilities from '../components/Champion/abilities/Abilities'
 
 const Champion = ({ championData }) => {
+  let backgroundImg
+  championData
+    ? (backgroundImg = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championData.id}_0.jpg`)
+    : (backgroundImg = 'no Image')
   return (
-    <Wrapper>
+    <Wrapper url={backgroundImg}>
       {championData ? <Hero championData={championData} /> : 'no champion Data'}
       {championData ? (
         <ChampionInfo championData={championData} />
-      ) : (
-        'no champion Info'
-      )}
-      {championData ? (
-        <Abilities championData={championData} />
       ) : (
         'no champion Info'
       )}
@@ -26,7 +25,9 @@ const Wrapper = styled.main`
   height: 100%;
   display: flex;
   flex-flow: column;
-  /* align-items: center; */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(${(props) => props.url}) no-repeat fixed;
+  background-size: cover;
 `
 
 export default Champion
