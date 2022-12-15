@@ -24,7 +24,9 @@ const ChampionInfo = ({ championData: { name, lore, title, id } }) => {
 }
 
 const Wrapper = styled.section`
-  flex: 100% 1 0;
+  width: 100%;
+  height: 100%;
+  /* flex: 100% 1 0; */
   display: flex;
   justify-content: center;
   align-items: center;
