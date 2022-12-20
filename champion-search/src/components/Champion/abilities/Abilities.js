@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Ability from './Ability'
 
@@ -8,8 +8,13 @@ const Abilities = ({ championData: { spells, passive } }) => {
     name: passive.name,
     description: passive.description,
   })
+
   passive.id = value.id
-  spells.unshift(passive)
+  useEffect(() => {
+    spells.unshift(passive)
+  }, [passive])
+
+  console.log(passive.id)
   return (
     <Wrapper>
       <h1>ABILITIES</h1>

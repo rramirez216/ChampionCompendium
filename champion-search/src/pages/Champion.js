@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 import ChampionInfo from '../components/Champion/ChampionInfo/ChampionInfo'
 import Hero from '../components/Champion/hero/Hero'
-import Abilities from '../components/Champion/abilities/Abilities'
-
 const Champion = ({ championData }) => {
   let backgroundImg
-  championData
-    ? (backgroundImg = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championData.id}_0.jpg`)
-    : (backgroundImg = 'no Image')
+  if (championData) {
+    backgroundImg = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championData.id}_0.jpg`
+  }
+
   return (
     <Wrapper url={backgroundImg}>
       {championData ? <Hero championData={championData} /> : 'no champion Data'}
@@ -23,10 +22,10 @@ const Champion = ({ championData }) => {
 const Wrapper = styled.main`
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-flow: column;
+  /* display: flex;
+  flex-flow: column; */
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(${(props) => props.url}) no-repeat fixed;
+    url(${(props) => props.url});
   background-size: cover;
 `
 

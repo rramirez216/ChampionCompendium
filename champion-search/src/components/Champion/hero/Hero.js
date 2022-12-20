@@ -11,10 +11,23 @@ const Hero = ({ championData: { name, id, title } }) => {
     </Wrapper>
   )
 }
+// const Hero = ({ championData }) => {
+//   return (
+//     <Wrapper>
+//       <Heading>
+//         <Span>{championData.title}</Span>
+//         <br />
+//         <Strong>{championData.name}</Strong>
+//       </Heading>
+//       <ChampionInfo championData={championData} />
+//     </Wrapper>
+//   )
+// }
 
 const Wrapper = styled.section`
-  flex: 100% 1 0;
-
+  /* flex: 100% 1 0; */
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
