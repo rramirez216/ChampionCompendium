@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import ChampionInfo from '../ChampionInfo/ChampionInfo'
 
-const Hero = ({ championData: { name, id, title } }) => {
+const Hero = ({ championData: { name, id, title, lore } }) => {
   return (
     <Wrapper>
       <Heading>
@@ -8,21 +9,10 @@ const Hero = ({ championData: { name, id, title } }) => {
         <br />
         <Strong>{name}</Strong>
       </Heading>
+      <ChampionInfo lore={lore} />
     </Wrapper>
   )
 }
-// const Hero = ({ championData }) => {
-//   return (
-//     <Wrapper>
-//       <Heading>
-//         <Span>{championData.title}</Span>
-//         <br />
-//         <Strong>{championData.name}</Strong>
-//       </Heading>
-//       <ChampionInfo championData={championData} />
-//     </Wrapper>
-//   )
-// }
 
 const Wrapper = styled.section`
   /* flex: 100% 1 0; */
@@ -31,6 +21,7 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  color: hsl(0, 0%, 100%);
 `
 const Heading = styled.h1`
   color: hsl(0, 0%, 100%);
