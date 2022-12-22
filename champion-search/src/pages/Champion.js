@@ -10,11 +10,11 @@ const Champion = ({ championData }) => {
   return (
     <Wrapper url={backgroundImg}>
       {championData ? <Hero championData={championData} /> : 'no champion Data'}
-      {championData ? (
+      {/* {championData ? (
         <ChampionInfo championData={championData} />
       ) : (
         'no champion Info'
-      )}
+      )} */}
     </Wrapper>
   )
 }
