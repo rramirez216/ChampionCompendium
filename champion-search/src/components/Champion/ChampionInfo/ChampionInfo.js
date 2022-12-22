@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const ChampionInfo = ({ championData: { name, lore, title, id } }) => {
+const ChampionInfo = ({ lore }) => {
   return (
     <Wrapper>
       <Info>
@@ -24,8 +24,8 @@ const ChampionInfo = ({ championData: { name, lore, title, id } }) => {
 }
 
 const Wrapper = styled.section`
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   /* flex: 100% 1 0; */
   display: flex;
   justify-content: center;
