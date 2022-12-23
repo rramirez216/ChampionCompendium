@@ -1,15 +1,30 @@
 import styled from 'styled-components'
 import ChampionInfo from '../ChampionInfo/ChampionInfo'
 
-const Hero = ({ championData: { name, id, title, lore } }) => {
+const Hero = ({
+  championData: {
+    name,
+    id,
+    title,
+    lore,
+    tags,
+    info: { difficulty },
+  },
+}) => {
   return (
     <Wrapper>
-      <Heading>
-        <Span>{title}</Span>
-        <br />
-        <Strong>{name}</Strong>
-      </Heading>
-      <ChampionInfo lore={lore} />
+      <InnerWrapper>
+        <Heading>
+          <Span>{title}</Span>
+          <br />
+          <Strong>{name}</Strong>
+        </Heading>
+        <ChampionInfo
+          lore={lore}
+          role={tags[0]}
+          difficultyNumber={difficulty}
+        />
+      </InnerWrapper>
     </Wrapper>
   )
 }
@@ -19,20 +34,25 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-end;
-  color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 90%);
+`
+const InnerWrapper = styled.div`
+  width: 70%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 96px;
 `
 const Heading = styled.h1`
-  color: hsl(0, 0%, 100%);
-  margin-left: 96px;
-  margin-bottom: 96px;
+  margin-bottom: 32px;
 `
 const Span = styled.span`
   font-size: 2rem;
 `
 const Strong = styled.strong`
-  font-size: 5.5rem;
+  font-size: 5rem;
 `
 
 export default Hero
