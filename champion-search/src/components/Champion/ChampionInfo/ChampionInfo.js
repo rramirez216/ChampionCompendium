@@ -1,17 +1,20 @@
 import styled from 'styled-components'
+import changeDifficultyFromNumberToWord from '../../../utils/changeDifficultyFromNumberToWord'
 
-const ChampionInfo = ({ lore }) => {
+const ChampionInfo = ({ lore, role, difficultyNumber }) => {
+  let difficulty = changeDifficultyFromNumberToWord(difficultyNumber)
+
   return (
     <Wrapper>
       <Info>
         <Section>
           <RoleWrapper>
-            <p>role:</p>
-            <p>Mage</p>
+            <div>role:</div>
+            <div>{role}</div>
           </RoleWrapper>
           <DifficultyWrapper>
             <p>difficulty:</p>
-            <p>Moderate</p>
+            <p>{difficulty}</p>
           </DifficultyWrapper>
         </Section>
         <InfoDivider></InfoDivider>
@@ -24,12 +27,15 @@ const ChampionInfo = ({ lore }) => {
 }
 
 const Wrapper = styled.section`
-  /* width: 100%;
-  height: 100%; */
-  /* flex: 100% 1 0; */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
 `
 const Info = styled.div`
   display: flex;
@@ -38,19 +44,21 @@ const Info = styled.div`
 const Section = styled.div`
   flex: 1 1 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: center;
-  padding: 80px 64px;
+  gap: 64px;
 `
 const RoleWrapper = styled.div``
 const DifficultyWrapper = styled.div``
 const InfoDivider = styled.div`
-  height: auto;
-  border: 1px solid red;
+  height: 10rem;
+  border: 1px solid hsl(0, 0%, 90%);
+  margin: 0 64px;
+  place-self: center;
 `
 const LoreWrapper = styled.div`
   flex: 1 1 0;
-  padding: 80px 64px;
+  padding-right: 64px;
 `
 
 export default ChampionInfo
