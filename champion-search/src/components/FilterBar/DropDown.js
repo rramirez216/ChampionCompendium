@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 import useToggle from '../../hooks/useToggle'
-import X from './X'
 
 const DropDown = ({
   children,
   list,
   setSelected,
   setSearch,
-  difficulty,
+
   setDifficulty,
 }) => {
   const [value, toggleValue] = useToggle(false)
