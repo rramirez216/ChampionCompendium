@@ -34,16 +34,15 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   color: hsl(0, 0%, 90%);
 `
 const InnerWrapper = styled.div`
-  width: 70%;
+  /* width: 33.33%; */
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-bottom: 96px;
 `
 const Heading = styled.h1`
   margin-bottom: 32px;
