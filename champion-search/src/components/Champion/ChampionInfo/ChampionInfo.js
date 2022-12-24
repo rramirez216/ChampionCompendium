@@ -5,7 +5,7 @@ const ChampionInfo = ({ lore, role, difficultyNumber }) => {
   let difficulty = changeDifficultyFromNumberToWord(difficultyNumber)
 
   return (
-    <Wrapper>
+    <>
       <Info>
         <Section>
           <RoleWrapper>
@@ -13,8 +13,8 @@ const ChampionInfo = ({ lore, role, difficultyNumber }) => {
             <div>{role}</div>
           </RoleWrapper>
           <DifficultyWrapper>
-            <p>difficulty:</p>
-            <p>{difficulty}</p>
+            <div>difficulty:</div>
+            <div>{difficulty}</div>
           </DifficultyWrapper>
         </Section>
         <InfoDivider></InfoDivider>
@@ -22,39 +22,33 @@ const ChampionInfo = ({ lore, role, difficultyNumber }) => {
           <p>{lore}</p>
         </LoreWrapper>
       </Info>
-    </Wrapper>
+    </>
   )
 }
 
-const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-left: 2px solid white;
-  border-right: 2px solid white;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
-`
+// const Wrapper = styled.section`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// `
 const Info = styled.div`
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  gap: 64px;
 `
 const Section = styled.div`
   flex: 1 1 0;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 64px;
 `
 const RoleWrapper = styled.div``
 const DifficultyWrapper = styled.div``
 const InfoDivider = styled.div`
-  height: 10rem;
+  width: 20rem;
   border: 1px solid hsl(0, 0%, 90%);
-  margin: 0 64px;
-  place-self: center;
 `
 const LoreWrapper = styled.div`
   flex: 1 1 0;
