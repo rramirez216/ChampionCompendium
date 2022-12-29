@@ -34,21 +34,22 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   color: hsl(0, 0%, 90%);
 `
 const InnerWrapper = styled.div`
-  /* width: 33.33%; */
+  max-width: 33.33%;
+  min-width: 390px;
   display: flex;
   flex-flow: column;
-  align-items: center;
+  align-items: flex-start;
+  margin-left: 10%;
 `
 const Heading = styled.h1`
   margin-bottom: 32px;
 `
 const Span = styled.span`
-  font-size: 2rem;
+  font-size: 1.8rem;
 `
 const Strong = styled.strong`
   font-size: 5rem;
