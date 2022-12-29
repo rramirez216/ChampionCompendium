@@ -22,11 +22,11 @@ const Champion = ({ championData }) => {
 const Wrapper = styled.main`
   width: 100%;
   height: 100%;
-  /* display: flex;
-  flex-flow: column; */
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${(props) => props.url});
   background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
 `
 
 export default Champion
