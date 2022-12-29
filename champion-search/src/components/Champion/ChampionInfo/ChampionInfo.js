@@ -5,24 +5,22 @@ const ChampionInfo = ({ lore, role, difficultyNumber }) => {
   let difficulty = changeDifficultyFromNumberToWord(difficultyNumber)
 
   return (
-    <>
-      <Info>
-        <Section>
-          <RoleWrapper>
-            <div>role:</div>
-            <div>{role}</div>
-          </RoleWrapper>
-          <DifficultyWrapper>
-            <div>difficulty:</div>
-            <div>{difficulty}</div>
-          </DifficultyWrapper>
-        </Section>
-        <InfoDivider></InfoDivider>
-        <LoreWrapper>
-          <p>{lore}</p>
-        </LoreWrapper>
-      </Info>
-    </>
+    <Info>
+      <Section>
+        <RoleWrapper>
+          <H2>Role:</H2>
+          <div>{role}</div>
+        </RoleWrapper>
+        <DifficultyWrapper>
+          <H2>Difficulty:</H2>
+          <div>{difficulty}</div>
+        </DifficultyWrapper>
+      </Section>
+      <InfoDivider></InfoDivider>
+      <LoreWrapper>
+        <p>{lore}</p>
+      </LoreWrapper>
+    </Info>
   )
 }
 
@@ -34,9 +32,10 @@ const ChampionInfo = ({ lore, role, difficultyNumber }) => {
 const Info = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: flex-start;
 
-  gap: 64px;
+  gap: 56px;
+  font-size: 1.1rem;
 `
 const Section = styled.div`
   flex: 1 1 0;
@@ -48,11 +47,14 @@ const RoleWrapper = styled.div``
 const DifficultyWrapper = styled.div``
 const InfoDivider = styled.div`
   width: 20rem;
-  border: 1px solid hsl(0, 0%, 90%);
+  border: 0.5px solid hsl(0, 0%, 90%);
 `
 const LoreWrapper = styled.div`
   flex: 1 1 0;
   padding-right: 64px;
+`
+const H2 = styled.h2`
+  font-weight: 700;
 `
 
 export default ChampionInfo
