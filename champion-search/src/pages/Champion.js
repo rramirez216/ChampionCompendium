@@ -1,20 +1,25 @@
 import styled from 'styled-components'
-import ChampionInfo from '../components/Champion/ChampionInfo/ChampionInfo'
 import Hero from '../components/Champion/hero/Hero'
+import AvailableSkins from '../components/Champion/AvailableSkins/AvailableSkins'
+
 const Champion = ({ championData }) => {
   let backgroundImg
   if (championData) {
     backgroundImg = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championData.id}_0.jpg`
+    console.log(championData.skins)
   }
 
   return (
     <Wrapper url={backgroundImg}>
       {championData ? <Hero championData={championData} /> : 'no champion Data'}
-      {/* {championData ? (
-        <ChampionInfo championData={championData} />
+      {championData ? (
+        <AvailableSkins
+          championSkins={championData.skins}
+          championId={championData.id}
+        />
       ) : (
-        'no champion Info'
-      )} */}
+        'no champion Data'
+      )}
     </Wrapper>
   )
 }
@@ -22,10 +27,19 @@ const Champion = ({ championData }) => {
 const Wrapper = styled.main`
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+
+  background: linear-gradient(
+      to right,
+      hsl(0 0% 0% / 0.9),
+      hsl(0 0% 0% / 0.8),
+      hsl(0 0% 0% / 0.3),
+      hsl(0 0% 0% / 0.2)
+    ),
     url(${(props) => props.url});
+
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: scroll;
   overflow-y: scroll;
 `
 
