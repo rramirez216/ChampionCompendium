@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
+// import Slide from './Slide'
 
 const AvailableSkins = ({ championSkins, championId }) => {
   return (
@@ -32,7 +33,11 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   background-color: hsl(0 0% 100%);
-  color: hsl(0 0% 90%);
+  color: hsl(0 0% 10%);
+  font-size: 4rem;
+  /* display: flex;
+  flex-flow: column;
+  justify-content: center; */
 `
 
 export default AvailableSkins
