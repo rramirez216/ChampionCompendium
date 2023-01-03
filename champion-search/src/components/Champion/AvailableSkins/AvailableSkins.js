@@ -3,41 +3,38 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import 'swiper/css/scrollbar'
-// import Slide from './Slide'
+import Slide from './Slide'
 
 const AvailableSkins = ({ championSkins, championId }) => {
   return (
     <Wrapper>
-      <h1>Available Skins:</h1>
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        slidesPerView={1}
-        navigation
-        scrollbar={{ draggable: true }}
-      >
-        {championSkins.map((skin) => (
-          <SwiperSlide>
-            <img
-              src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`}
-              alt={skin.name}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <H2>Available Skins</H2>
+      <SwiperWrapper>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          slidesPerView={1}
+          navigation
+        >
+          {championSkins.map((skin) => (
+            <SwiperSlide>
+              <Slide key={skin.id} championId={championId} skin={skin} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </SwiperWrapper>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.section`
-  width: 100%;
-  height: 100%;
-  background-color: hsl(0 0% 100%);
-  color: hsl(0 0% 10%);
-  font-size: 4rem;
-  /* display: flex;
-  flex-flow: column;
-  justify-content: center; */
+  /* width: 100%;
+  height: 100%; */
+  background-color: hsl(40 100% 99%);
 `
+const H2 = styled.h2`
+  width: max-content;
+  font-size: 2.5rem;
+`
+const SwiperWrapper = styled.div``
 
 export default AvailableSkins
