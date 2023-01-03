@@ -4,15 +4,19 @@ import ChampionInfo from '../ChampionInfo/ChampionInfo'
 const Hero = ({
   championData: {
     name,
-    id,
     title,
     lore,
     tags,
+    id,
     info: { difficulty },
   },
 }) => {
+  let backgroundImg
+  if (name) {
+    backgroundImg = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`
+  }
   return (
-    <Wrapper>
+    <Wrapper url={backgroundImg}>
       <InnerWrapper>
         <Heading>
           <Span>{title}</Span>
@@ -36,6 +40,17 @@ const Wrapper = styled.section`
   display: flex;
   align-items: center;
   color: hsl(0, 0%, 90%);
+  background: linear-gradient(
+      to right,
+      hsl(0 0% 0% / 0.9),
+      hsl(0 0% 0% / 0.8),
+      hsl(0 0% 0% / 0.3),
+      hsl(0 0% 0% / 0.2)
+    ),
+    url(${(props) => props.url});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 `
 const InnerWrapper = styled.div`
   max-width: 33.33%;
