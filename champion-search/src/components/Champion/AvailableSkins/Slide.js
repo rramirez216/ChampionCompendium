@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { SwiperSlide } from 'swiper/react'
 
 const Slide = ({ championId, skin }) => {
   return (
@@ -19,6 +18,7 @@ const Slide = ({ championId, skin }) => {
 const Wrapper = styled.div`
   display: grid;
   place-content: center;
+  border: 3px solid red;
 `
 const H3 = styled.h3`
   width: max-content;
