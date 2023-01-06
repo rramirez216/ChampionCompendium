@@ -18,17 +18,12 @@ const ChampionInfo = ({ lore, role, difficultyNumber }) => {
       </Section>
       <InfoDivider></InfoDivider>
       <LoreWrapper>
-        <p>{lore}</p>
+        <Paragraph>{lore}</Paragraph>
       </LoreWrapper>
     </Info>
   )
 }
 
-// const Wrapper = styled.section`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `
 const Info = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -36,6 +31,8 @@ const Info = styled.div`
 
   gap: 56px;
   font-size: 1.1rem;
+  line-height: 1.7em;
+  letter-spacing: 0.09ch;
 `
 const Section = styled.div`
   flex: 1 1 0;
@@ -47,7 +44,7 @@ const RoleWrapper = styled.div``
 const DifficultyWrapper = styled.div``
 const InfoDivider = styled.div`
   width: 20rem;
-  border: 0.5px solid hsl(0, 0%, 90%);
+  border: 0.5px solid hsl(40 53% 58%);
 `
 const LoreWrapper = styled.div`
   flex: 1 1 0;
@@ -55,6 +52,9 @@ const LoreWrapper = styled.div`
 `
 const H2 = styled.h2`
   font-weight: 700;
+`
+const Paragraph = styled.p`
+  line-height: 1.7em;
 `
 
 export default ChampionInfo
