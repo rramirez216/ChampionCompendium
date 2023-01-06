@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { SwiperSlide } from 'swiper/react'
 
 const Slide = ({ championId, skin }) => {
   return (
@@ -9,8 +8,10 @@ const Slide = ({ championId, skin }) => {
         alt={skin.name}
       />
       <H3>
-        {skin.name}
-        <Underline></Underline>
+        <Name>
+          {skin.name}
+          <Underline></Underline>
+        </Name>
       </H3>
     </Wrapper>
   )
@@ -21,11 +22,13 @@ const Wrapper = styled.div`
   place-content: center;
 `
 const H3 = styled.h3`
-  width: max-content;
+  text-align: center;
   font-size: 2.2rem;
-  position: relative;
-  left: 40%;
   margin-top: 32px;
+`
+const Name = styled.span`
+  display: inline-block;
+  width: max-content;
 `
 const Underline = styled.span`
   display: block;

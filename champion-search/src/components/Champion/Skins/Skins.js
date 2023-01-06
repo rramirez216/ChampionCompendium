@@ -14,12 +14,12 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   background-color: hsl(40 100% 99%);
-  padding-top: 64px;
+  padding-top: 32px;
+  overflow: hidden;
 `
 const H2 = styled.h2`
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 32px;
 `
 
 export default Skins
