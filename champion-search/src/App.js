@@ -14,19 +14,21 @@ function App() {
   const [currentChampion, setCurrentChampion] = useState('Udyr')
 
   let championListResponse = useFetch(
-    'http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/champion.json'
+    'http://ddragon.leagueoflegends.com/cdn/12.23.1/data/en_US/champion.json'
   )
   let championArray
   if (championListResponse) {
+    console.log(championListResponse)
     championArray = getValuesFromResponse(championListResponse)
   }
 
   const championData = useFetch(
-    `http://ddragon.leagueoflegends.com/cdn/12.20.1/data/en_US/champion/${currentChampion}.json`
+    `http://ddragon.leagueoflegends.com/cdn/12.23.1/data/en_US/champion/${currentChampion}.json`
   )
   let championDataResponse
   if (championData) {
     championDataResponse = championData[currentChampion]
+    console.log(championData[currentChampion])
   }
   const handleSearch = (e) => setSearch(e)
 
