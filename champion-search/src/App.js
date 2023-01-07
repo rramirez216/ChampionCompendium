@@ -18,8 +18,16 @@ function App() {
   )
   let championArray
   if (championListResponse) {
-    console.log(championListResponse)
+    // console.log(championListResponse)
     championArray = getValuesFromResponse(championListResponse)
+    console.log(
+      championArray.map((champ) => {
+        if (champ.id === 'MonkeyKing') {
+          champ.id = 'Wukong'
+        }
+        return champ
+      })
+    )
   }
 
   const championData = useFetch(
