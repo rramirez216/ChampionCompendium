@@ -6,7 +6,7 @@ const DropDown = ({
   list,
   setSelected,
   setSearch,
-
+  location,
   setDifficulty,
 }) => {
   const [value, toggleValue] = useToggle(false)
@@ -18,7 +18,7 @@ const DropDown = ({
 
       <Ul visibility={value ? 'block' : 'none'}>
         {list ? (
-          list.length > 3 ? (
+          location === 'search' ? (
             list.map((item) => (
               <Li
                 onClick={() => {
@@ -43,7 +43,7 @@ const DropDown = ({
             ))
           )
         ) : (
-          <Li>loading...</Li>
+          <Li>No Match found</Li>
         )}
       </Ul>
     </Wrapper>
