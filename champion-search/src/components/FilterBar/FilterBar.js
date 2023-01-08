@@ -21,6 +21,7 @@ const FilterBar = ({
         list={championArray}
         setSelected={setSelected}
         setSearch={setSearch}
+        location={'search'}
       >
         <Search
           search={search}
