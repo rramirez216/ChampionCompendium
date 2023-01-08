@@ -18,16 +18,15 @@ function App() {
   )
   let championArray
   if (championListResponse) {
-    // console.log(championListResponse)
     championArray = getValuesFromResponse(championListResponse)
-    console.log(
-      championArray.map((champ) => {
+      .map((champ) => {
         if (champ.id === 'MonkeyKing') {
           champ.id = 'Wukong'
         }
         return champ
       })
-    )
+      .sort((a, b) => a.id.localeCompare(b.id))
+    console.log(championArray)
   }
 
   const championData = useFetch(
