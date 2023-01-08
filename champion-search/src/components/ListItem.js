@@ -2,13 +2,15 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const ListItem = ({ name, id, setCurrentChampion }) => {
+  let newId
+  id === 'Wukong' ? (newId = 'MonkeyKing') : (newId = id)
   return (
     <Card
-      to={`/champions/${id.toLowerCase()}`}
-      onClick={() => setCurrentChampion(id)}
+      to={`/champions/${newId.toLowerCase()}`}
+      onClick={() => setCurrentChampion(newId)}
     >
       <img
-        src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${id}_0.jpg`}
+        src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${newId}_0.jpg`}
         alt={name}
       />
       <Name>
