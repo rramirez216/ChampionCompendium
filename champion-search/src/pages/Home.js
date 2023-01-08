@@ -21,7 +21,7 @@ const Home = ({
   // filters the drop down in the search bar
   search
     ? (filteredInput = championArray.filter((value) =>
-        value.name.toLowerCase().includes(search)
+        value.name.toLowerCase().includes(search.toLowerCase())
       ))
     : (filteredInput = championArray)
   // this will filter the list of champions whether a champ was selected in the search bar or a tag was selected
