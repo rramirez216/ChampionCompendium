@@ -12,7 +12,7 @@ const Abilities = ({ championData: { spells, passive } }) => {
   passive.id = value.id
   useEffect(() => {
     spells.unshift(passive)
-  }, [passive])
+  }, [passive, spells])
 
   console.log(passive.id)
   return (
