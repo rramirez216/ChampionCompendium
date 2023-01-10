@@ -21,7 +21,8 @@ const ChampionList = ({ championArray, setCurrentChampion }) => {
 }
 
 const Section = styled.div`
-  max-width: 1440px;
+  width: 100%;
+
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
