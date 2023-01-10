@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import ChampionList from '../components/ChampionList'
+import Header from '../components/Header/Header'
 import FilterBar from '../components/FilterBar/FilterBar'
 import filterByDifficulty from '../utils/filterByDifficulty'
 
@@ -37,6 +38,7 @@ const Home = ({
 
   return (
     <Wrapper>
+      <Header />
       <FilterBar
         search={search}
         championArray={filteredInput}
@@ -59,7 +61,6 @@ const Home = ({
 const Wrapper = styled.main`
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
 `
 
 export default Home
