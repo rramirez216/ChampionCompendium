@@ -39,11 +39,13 @@ const FilterBar = ({
 }
 
 const Bar = styled.div`
-  width: 1440px;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  border: solid 2px salmon;
-  padding: 16px 8px;
+  justify-content: center;
+  /* border: solid 2px salmon; */
+  padding: 16px 32px;
+  margin: 64px auto;
 `
 
 export default FilterBar
