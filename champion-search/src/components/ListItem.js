@@ -23,8 +23,6 @@ const ListItem = ({ name, id, setCurrentChampion }) => {
 
 const Card = styled(Link)`
   display: block;
-  max-width: 250px;
-  max-height: 350px;
   overflow: hidden;
   position: relative;
 `
