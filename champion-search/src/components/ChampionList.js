@@ -4,6 +4,7 @@ import ListItem from './ListItem'
 const ChampionList = ({ championArray, setCurrentChampion }) => {
   return (
     <Section>
+      {/* <InnerWrapper> */}
       {championArray ? (
         championArray.map((value) => (
           <ListItem
@@ -16,17 +17,21 @@ const ChampionList = ({ championArray, setCurrentChampion }) => {
       ) : (
         <div>loading...</div>
       )}
+      {/* </InnerWrapper> */}
     </Section>
   )
 }
 
-const Section = styled.div`
+const Section = styled.section`
   width: 100%;
-
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-rows: repeat(auto-fill, 350px);
   justify-content: center;
-  gap: 16px;
+`
+const InnerWrapper = styled.div`
+  /* max-width: 250px;
+  max-height: 350px; */
 `
 
 export default ChampionList
