@@ -9,6 +9,7 @@ const Search = ({ search, handleSearch, setSelected, setSearch }) => {
       <Input
         value={search}
         onChange={(e) => handleSearch(e.target.value)}
+        autoComplete='off'
         type='text'
         name='csearch'
         placeholder='SEARCH'
@@ -28,6 +29,7 @@ const Label = styled.label`
 `
 const Input = styled.input`
   border-style: none;
+  font-size: 1.2rem;
 `
 
 export default Search
