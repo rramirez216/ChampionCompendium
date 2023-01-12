@@ -25,9 +25,9 @@ const ChampionList = ({ championArray, setCurrentChampion }) => {
 const Section = styled.section`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  grid-template-rows: repeat(auto-fill, 350px);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
   justify-content: center;
+  gap: 32px;
 `
 const InnerWrapper = styled.div`
   /* max-width: 250px;
