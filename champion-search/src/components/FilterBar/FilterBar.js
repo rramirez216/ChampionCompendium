@@ -46,6 +46,7 @@ const Bar = styled.div`
   /* border: solid 2px salmon; */
   padding: 16px 32px;
   margin: 64px auto;
+  font-size: 1.2rem;
 `
 
 export default FilterBar
