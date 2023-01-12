@@ -22,11 +22,11 @@ const ListItem = ({ name, id, setCurrentChampion }) => {
 }
 
 const Card = styled(Link)`
+  max-height: 450px;
   display: block;
   overflow: hidden;
   position: relative;
 `
-// const Image = styled.div``
 const Name = styled.h3`
   padding: 8px;
   font-size: 2rem;
