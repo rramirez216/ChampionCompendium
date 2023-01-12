@@ -16,8 +16,12 @@ const Tags = ({ setTag }) => {
 const Wrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 16px;
 `
 const Button = styled.button`
+  font-size: 1.2rem;
   color: hsl(0, 0%, 55%);
   background-color: hsl(0, 0%, 100%);
   border-style: none;
