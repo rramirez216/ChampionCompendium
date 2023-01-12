@@ -50,7 +50,8 @@ const DropDown = ({
 
 const Wrapper = styled.div`
   position: relative;
-  width: 200px;
+  width: max-content;
+  /* flex-grow: 1; */
 `
 const Ul = styled.ul`
   width: 100%;
