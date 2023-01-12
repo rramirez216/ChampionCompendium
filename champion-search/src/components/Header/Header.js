@@ -5,7 +5,6 @@ const Header = () => {
     <Heading>
       <H1>
         Choose Your
-        <br />
         <Span>Champion</Span>
       </H1>
     </Heading>
@@ -17,10 +16,12 @@ const Heading = styled.header`
   margin: 64px 0px;
 `
 const H1 = styled.h1`
-  font-size: 2.5rem;
+  font-size: 2rem;
 `
 const Span = styled.span`
-  font-size: 5rem;
+  font-size: 7rem;
+  display: block;
+  margin-top: -32px; ;
 `
 
 export default Header
