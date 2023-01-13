@@ -1,31 +1,38 @@
 const constants = {
   tags: [
     {
-      plural: 'All',
+      id: 0,
+      name: 'All',
       singular: 'All',
     },
     {
-      plural: 'Assassins',
+      id: 1,
+      name: 'Assassins',
       singular: 'Assassin',
     },
     {
-      plural: 'Fighters',
+      id: 2,
+      name: 'Fighters',
       singular: 'Fighter',
     },
     {
-      plural: 'Mages',
+      id: 3,
+      name: 'Mages',
       singular: 'Mage',
     },
     {
-      plural: 'Marksmen',
+      id: 4,
+      name: 'Marksmen',
       singular: 'Marksman',
     },
     {
-      plural: 'Supports',
+      id: 5,
+      name: 'Supports',
       singular: 'Support',
     },
     {
-      plural: 'Tanks',
+      id: 6,
+      name: 'Tanks',
       singular: 'Tank',
     },
   ],
