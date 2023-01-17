@@ -7,6 +7,7 @@ const X = ({
   setSearch,
   location,
   setDifficulty,
+  setTag,
 }) => {
   return (
     <Circle
@@ -15,6 +16,8 @@ const X = ({
         if (location === 'search') {
           setSelected('')
           setSearch('')
+        } else if (location === 'tags') {
+          setTag('All Roles')
         } else {
           setDifficulty('All Difficulties')
         }
