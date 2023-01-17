@@ -28,7 +28,7 @@ const Home = ({
   // this will filter the list of champions whether a champ was selected in the search bar or a tag was selected
   if (selected) {
     selectedChampion = championArray.filter((value) => value.name === selected)
-  } else if (tag !== 'All') {
+  } else if (tag !== 'All Roles') {
     selectedChampion = championArray.filter((value) => value.tags.includes(tag))
   } else {
     selectedChampion = championArray
@@ -48,6 +48,7 @@ const Home = ({
         setTag={setTag}
         difficulty={difficulty}
         setDifficulty={setDifficulty}
+        tag={tag}
       />
       {selected}
       <ChampionList
@@ -61,6 +62,7 @@ const Home = ({
 const Wrapper = styled.main`
   display: flex;
   flex-flow: column wrap;
+  /* padding: 0 64px; */
 `
 
 export default Home
