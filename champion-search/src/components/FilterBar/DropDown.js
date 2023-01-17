@@ -4,10 +4,11 @@ import useToggle from '../../hooks/useToggle'
 const DropDown = ({
   children,
   list,
+  variant,
   setSelected,
   setSearch,
-  location,
   setDifficulty,
+  setTag,
 }) => {
   const [value, toggleValue] = useToggle(false)
   return (
@@ -15,34 +16,25 @@ const DropDown = ({
       {children}
 
       <Ul visibility={value ? 'block' : 'none'}>
-        {list ? (
-          location === 'search' ? (
-            list.map((item) => (
+        {list
+          ? list.map((item) => (
               <Li
                 onClick={() => {
-                  setSelected(item.name)
-                  setSearch(item.name)
+                  if (variant === 'difficulty') {
+                    setDifficulty(item.name)
+                  } else if (variant === 'search') {
+                    setSearch(item.name)
+                    setSelected(item.name)
+                  } else {
+                    setTag(item.singular)
+                  }
                 }}
                 key={item.id}
               >
                 {item.name}
               </Li>
             ))
-          ) : (
-            list.map((item, index) => (
-              <Li
-                onClick={() => {
-                  setDifficulty(item.name)
-                }}
-                key={index}
-              >
-                {item.name}
-              </Li>
-            ))
-          )
-        ) : (
-          <Li>No Match found</Li>
-        )}
+          : null}
       </Ul>
     </Wrapper>
   )
@@ -50,8 +42,7 @@ const DropDown = ({
 
 const Wrapper = styled.div`
   position: relative;
-  width: max-content;
-  /* flex-grow: 1; */
+  /* width: max-content; */
 `
 const Ul = styled.ul`
   width: 100%;
