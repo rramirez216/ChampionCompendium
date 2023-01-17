@@ -26,10 +26,12 @@ const Search = ({ search, handleSearch, setSelected, setSearch }) => {
 
 const Label = styled.label`
   display: flex;
+  width: 120px;
 `
 const Input = styled.input`
   border-style: none;
   font-size: 1.2rem;
+  width: 100%;
 `
 
 export default Search
