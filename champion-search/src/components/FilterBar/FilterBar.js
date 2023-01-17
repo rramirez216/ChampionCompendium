@@ -14,6 +14,7 @@ const FilterBar = ({
   setTag,
   difficulty,
   setDifficulty,
+  tag,
 }) => {
   return (
     <Bar>
@@ -21,7 +22,7 @@ const FilterBar = ({
         list={championArray}
         setSelected={setSelected}
         setSearch={setSearch}
-        location={'search'}
+        variant={'search'}
       >
         <Search
           search={search}
@@ -30,8 +31,12 @@ const FilterBar = ({
           setSearch={setSearch}
         />
       </DropDown>
-      <Tags setTag={setTag} />
-      <DropDown list={constants.difficulty} setDifficulty={setDifficulty}>
+      <Tags setTag={setTag} tag={tag} />
+      <DropDown
+        list={constants.difficulty}
+        setDifficulty={setDifficulty}
+        variant={'difficulty'}
+      >
         <Difficulty difficulty={difficulty} setDifficulty={setDifficulty} />
       </DropDown>
     </Bar>
@@ -42,10 +47,9 @@ const Bar = styled.div`
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  /* border: solid 2px salmon; */
+  justify-content: space-between;
   padding: 16px 32px;
-  margin: 64px auto;
+  /* margin: 64px 0; */
   font-size: 1.2rem;
 `
 
