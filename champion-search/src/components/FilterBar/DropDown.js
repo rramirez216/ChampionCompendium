@@ -12,7 +12,10 @@ const DropDown = ({
 }) => {
   const [value, toggleValue] = useToggle(false)
   return (
-    <Wrapper onClick={toggleValue}>
+    <Wrapper
+      onClick={toggleValue}
+      padding={variant === 'tags' ? '0px 16px' : '0px 16px 0px'}
+    >
       {children}
 
       <Ul visibility={value ? 'block' : 'none'}>
@@ -42,7 +45,13 @@ const DropDown = ({
 
 const Wrapper = styled.div`
   position: relative;
-  /* width: max-content; */
+  display: flex;
+  flex-flow: row;
+  padding: ${(props) => props.padding};
+  @media (max-width: 34.375rem) {
+    flex: 1 0 0;
+    padding: 0;
+  }
 `
 const Ul = styled.ul`
   width: 100%;
@@ -50,14 +59,17 @@ const Ul = styled.ul`
   background-color: hsl(0, 0%, 100%);
   position: absolute;
   top: 100%;
+  left: 0;
   z-index: 2;
   overflow-y: scroll;
   display: ${(props) => props.visibility};
 `
 const Li = styled.li`
+  padding: 8px 8px;
   &:hover {
-    background-color: hsl(0, 0%, 95%);
+    background-color: hsl(0, 0%, 98%);
     cursor: pointer;
+    border: 1px solid hsl(40 53% 58%);
   }
 `
 
