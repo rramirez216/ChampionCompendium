@@ -20,7 +20,10 @@ const Difficulty = ({ difficulty, setDifficulty }) => {
   )
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: row;
+`
 const Current = styled.div``
 
 export default Difficulty
