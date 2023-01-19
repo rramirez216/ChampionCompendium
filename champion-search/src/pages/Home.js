@@ -50,7 +50,6 @@ const Home = ({
         setDifficulty={setDifficulty}
         tag={tag}
       />
-      {selected}
       <ChampionList
         championArray={selectedChampion}
         setCurrentChampion={setCurrentChampion}
@@ -62,7 +61,7 @@ const Home = ({
 const Wrapper = styled.main`
   display: flex;
   flex-flow: column wrap;
-  /* padding: 0 64px; */
+  padding-bottom: 64px;
 `
 
 export default Home
