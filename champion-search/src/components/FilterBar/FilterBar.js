@@ -44,13 +44,18 @@ const FilterBar = ({
 }
 
 const Bar = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 16px 32px;
-  /* margin: 64px 0; */
+  margin: 0 0 64px;
   font-size: 1.2rem;
+  @media (max-width: 34.375rem) {
+    padding: 8px 16px;
+    font-size: 1.1rem;
+  }
 `
 
 export default FilterBar
