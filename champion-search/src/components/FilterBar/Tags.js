@@ -8,7 +8,7 @@ const Tags = ({ setTag, tag }) => {
     <Wrapper>
       <InnerWrapper>
         <DropDown
-          list={constants.tags}
+          list={constants.tags.slice(1)}
           setTag={setTag}
           tag={tag}
           variant={'tags'}
@@ -35,6 +35,9 @@ const Wrapper = styled.div`
   flex-flow: row nowrap;
   justify-content: center;
   gap: 16px;
+  @media (max-width: 34.375rem) {
+    flex: 1 0 0;
+  }
 `
 const Button = styled.button`
   font-size: 1.2rem;
@@ -48,8 +51,13 @@ const Button = styled.button`
 `
 const InnerWrapper = styled.div`
   display: none;
+
   @media (max-width: 68.75rem) {
     display: block;
+  }
+  @media (max-width: 34.375rem) {
+    width: 100%;
+    padding-left: 16px;
   }
 `
 
