@@ -59,9 +59,17 @@ const Home = ({
 }
 
 const Wrapper = styled.main`
+  max-width: 80%;
+  margin: 0 auto;
   display: flex;
   flex-flow: column wrap;
   padding-bottom: 64px;
+  @media (max-width: 81.25rem) {
+    max-width: 95%;
+  }
+  @media (max-width: 31.25rem) {
+    max-width: 100%;
+  }
 `
 
 export default Home
