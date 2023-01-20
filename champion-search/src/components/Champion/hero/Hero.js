@@ -51,6 +51,20 @@ const Wrapper = styled.section`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  @media (max-width: 68.75rem) {
+    background: linear-gradient(
+        to right,
+        hsl(0 0% 0% / 0.9),
+        hsl(0 0% 0% / 0.7),
+        hsl(0 0% 0% / 0.3)
+      ),
+      url(${(props) => props.url});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+  @media (max-width: 34.375rem) {
+  }
 `
 const InnerWrapper = styled.div`
   max-width: 33.33%;
