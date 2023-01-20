@@ -56,6 +56,9 @@ const Bar = styled.div`
     padding: 8px 16px;
     font-size: 1.1rem;
   }
+  @media (max-width: 22.5rem) {
+    padding: 4px 8px;
+  }
 `
 
 export default FilterBar
