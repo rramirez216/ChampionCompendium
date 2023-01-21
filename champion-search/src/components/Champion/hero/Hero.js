@@ -13,7 +13,7 @@ const Hero = ({
 }) => {
   let backgroundImg
   if (name) {
-    backgroundImg = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`
+    backgroundImg = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_0.jpg`
   }
   return (
     <Wrapper url={backgroundImg}>

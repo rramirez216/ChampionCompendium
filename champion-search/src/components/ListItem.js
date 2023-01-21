@@ -10,7 +10,7 @@ const ListItem = ({ name, id, setCurrentChampion }) => {
       onClick={() => setCurrentChampion(newId)}
     >
       <img
-        src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${newId}_0.jpg`}
+        src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${newId}_0.jpg`}
         alt={name}
       />
       <Name>

@@ -4,7 +4,7 @@ const Slide = ({ championId, skin }) => {
   return (
     <Wrapper>
       <img
-        src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`}
+        src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`}
         alt={skin.name}
       />
       <H3>
