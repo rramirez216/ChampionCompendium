@@ -25,6 +25,10 @@ const H3 = styled.h3`
   text-align: center;
   font-size: 2.2rem;
   margin-top: 32px;
+  @media (max-width: 34.375rem) {
+    font-size: 1.5rem;
+    overflow-x: scroll;
+  }
 `
 const Name = styled.span`
   display: inline-block;
