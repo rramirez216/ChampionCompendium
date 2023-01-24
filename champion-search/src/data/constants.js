@@ -2,7 +2,7 @@ const constants = {
   tags: [
     {
       id: 0,
-      name: 'All',
+      name: 'All Roles',
       singular: 'All',
     },
     {
