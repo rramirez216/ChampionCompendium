@@ -5,7 +5,7 @@ import X from './X'
 const Search = ({ search, handleSearch, setSelected, setSearch }) => {
   return (
     <Label>
-      <Csearch />
+      <SearchIcon />
       <Input
         value={search}
         onChange={(e) => handleSearch(e.target.value)}
@@ -24,13 +24,9 @@ const Search = ({ search, handleSearch, setSelected, setSearch }) => {
   )
 }
 
-const Label = styled.label`
-  display: flex;
-  flex-flow: row;
-  width: 120px;
-  @media (max-width: 34.375rem) {
-    width: 100%;
-  }
+const SearchIcon = styled(Csearch)`
+  color: hsl(40 53% 58%);
+  transition: transform 150ms ease;
 `
 const Input = styled.input`
   border-style: none;
@@ -48,6 +44,22 @@ const Input = styled.input`
       border: 0.2px solid hsl(40 53% 58%);
       width: 100%;
     }
+  }
+`
+
+const Label = styled.label`
+  display: flex;
+  flex-flow: row;
+  width: 120px;
+  &,
+  ${Input} {
+    cursor: pointer;
+  }
+  &:hover ${SearchIcon} {
+    transform: translateX(-4px);
+  }
+  @media (max-width: 34.375rem) {
+    width: 100%;
   }
 `
 
