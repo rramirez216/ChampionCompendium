@@ -9,7 +9,7 @@ import GlobalStyles from './components/GlobalStyles'
 function App() {
   const [search, setSearch] = useState('')
   const [selected, setSelected] = useState('')
-  const [tag, setTag] = useState('All Roles')
+  const [tag, setTag] = useState('All')
   const [difficulty, setDifficulty] = useState('All Difficulties')
   const [currentChampion, setCurrentChampion] = useState('Udyr')
 
