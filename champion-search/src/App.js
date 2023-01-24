@@ -26,7 +26,6 @@ function App() {
         return champ
       })
       .sort((a, b) => a.id.localeCompare(b.id))
-    console.log(championArray)
   }
 
   const championData = useFetch(
