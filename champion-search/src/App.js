@@ -42,7 +42,7 @@ function App() {
     <>
       <Routes>
         <Route
-          path='/champions'
+          path='/'
           element={
             <Home
               championArray={championArray}
@@ -59,7 +59,7 @@ function App() {
             />
           }
         />
-        <Route path='/' element={<Navigate to='/champions' />} />
+        {/* <Route path='/' element={<Navigate to='/champions' />} /> */}
         <Route
           path={`/champions/${currentChampion}`}
           element={

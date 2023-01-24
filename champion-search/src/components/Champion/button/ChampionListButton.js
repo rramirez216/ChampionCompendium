@@ -4,7 +4,7 @@ import { List, ArrowLeft } from 'lucide-react'
 
 const ChampionListButton = () => {
   return (
-    <Button to={'/champions'}>
+    <Button to={'/'}>
       <Arrow size={24} />
       <Span>Champion List</Span>
 
