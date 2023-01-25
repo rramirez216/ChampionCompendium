@@ -9,8 +9,9 @@ const Slider = ({ championSkins, championId }) => {
   return (
     <Wrapper>
       <SwiperNavigation modules={[Navigation]} slidesPerView={1} navigation>
+        <H2>Available Skins:</H2>
         {championSkins.map((skin) => (
-          <IndividualSlide>
+          <IndividualSlide key={skin.id}>
             <Slide key={skin.id} championId={championId} skin={skin} />
           </IndividualSlide>
         ))}
@@ -24,9 +25,17 @@ const Wrapper = styled.section`
   height: 100%;
   display: flex;
   align-items: center;
-  margin-top: -64px;
 `
-const SwiperNavigation = styled(Swiper)``
+const H2 = styled.h2`
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(40px, 24px);
+  font-size: 2.5rem;
+`
+const SwiperNavigation = styled(Swiper)`
+  padding-top: 96px;
+`
 const IndividualSlide = styled(SwiperSlide)``
 
 export default Slider
