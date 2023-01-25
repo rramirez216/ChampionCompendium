@@ -10,14 +10,14 @@ const X = ({
   setTag,
 }) => {
   return (
-    <Circle
+    <Icon
       display={displayBoolean ? 'block' : 'none'}
       onClick={() => {
         if (location === 'search') {
           setSelected('')
           setSearch('')
         } else if (location === 'tags') {
-          setTag('All Roles')
+          setTag('All')
         } else {
           setDifficulty('All Difficulties')
         }
@@ -26,8 +26,9 @@ const X = ({
   )
 }
 
-const Circle = styled(XCircle)`
+const Icon = styled(XCircle)`
   cursor: pointer;
   display: ${(props) => props.display};
+  transform: translateX(4px);
 `
 export default X
