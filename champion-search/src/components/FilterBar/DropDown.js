@@ -48,6 +48,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-flow: row;
   padding: ${(props) => props.padding};
+  cursor: pointer;
+  /* transition: transform 250ms ease;
+  &:hover {
+    transform: translateY(-4px);
+  } */
   @media (max-width: 34.375rem) {
     flex: 1 0 0;
     padding: 0;
