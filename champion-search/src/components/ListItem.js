@@ -9,7 +9,7 @@ const ListItem = ({ name, id, setCurrentChampion }) => {
       to={`/champions/${newId.toLowerCase()}`}
       onClick={() => setCurrentChampion(newId)}
     >
-      <img
+      <Img
         src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${newId}_0.jpg`}
         alt={name}
       />
@@ -21,12 +21,6 @@ const ListItem = ({ name, id, setCurrentChampion }) => {
   )
 }
 
-const Card = styled(Link)`
-  max-height: 450px;
-  display: block;
-  overflow: hidden;
-  position: relative;
-`
 const Name = styled.h3`
   padding: 8px;
   font-size: 2rem;
@@ -39,6 +33,8 @@ const Name = styled.h3`
 `
 const Span = styled.span`
   display: block;
+  margin-left: 16px;
+  transition: transform 250ms ease;
 `
 const Square = styled.div`
   width: 50px;
@@ -48,6 +44,26 @@ const Square = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+  transition: transform 250ms ease-out;
+`
+const Img = styled.img`
+  width: 100%;
+  transition: transform 250ms ease;
+`
+const Card = styled(Link)`
+  max-height: 450px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  &:hover ${Span} {
+    transform: translateX(8px);
+  }
+  &:hover ${Square} {
+    transform: translate(100%, -100%) rotate(45deg);
+  }
+  &:hover ${Img} {
+    transform: scale(1.03);
+  }
 `
 
 export default ListItem
