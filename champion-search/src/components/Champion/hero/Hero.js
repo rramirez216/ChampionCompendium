@@ -42,6 +42,7 @@ const Wrapper = styled.section`
   align-items: center;
   position: relative;
   color: hsl(0, 0%, 90%);
+  overflow-y: scroll;
   background: linear-gradient(
       to right,
       hsl(0 0% 0% / 0.9),
