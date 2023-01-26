@@ -9,7 +9,7 @@ const Slider = ({ championSkins, championId }) => {
   return (
     <Wrapper>
       <SwiperNavigation modules={[Navigation]} slidesPerView={1} navigation>
-        <H2>Available Skins:</H2>
+        {/* <H2>Available Skins:</H2> */}
         {championSkins.map((skin) => (
           <IndividualSlide key={skin.id}>
             <Slide key={skin.id} championId={championId} skin={skin} />
@@ -23,15 +23,6 @@ const Slider = ({ championSkins, championId }) => {
 const Wrapper = styled.section`
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-`
-const H2 = styled.h2`
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(40px, 24px);
-  font-size: 2.5rem;
 `
 const SwiperNavigation = styled(Swiper)`
   padding-top: 96px;
