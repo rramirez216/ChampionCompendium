@@ -59,7 +59,6 @@ function App() {
             />
           }
         />
-        {/* <Route path='/' element={<Navigate to='/champions' />} /> */}
         <Route
           path={`/champions/${currentChampion}`}
           element={
