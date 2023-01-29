@@ -43,8 +43,16 @@ const Section = styled.div`
   align-items: center;
   gap: 64px;
 `
-const RoleWrapper = styled.div``
-const DifficultyWrapper = styled.div``
+const RoleWrapper = styled.div`
+  & div {
+    color: hsl(40 53% 58%);
+  }
+`
+const DifficultyWrapper = styled.div`
+  & div {
+    color: hsl(40 53% 58%);
+  }
+`
 const InfoDivider = styled.div`
   width: 20rem;
   border: 0.5px solid hsl(40 53% 58%);
